@@ -1,0 +1,42 @@
+<%- include('../includes/head.ejs') %>
+
+    <link rel="stylesheet" href="/css/users.css">
+
+</head>
+</body>
+
+    <%- include('../includes/nav.ejs') %>
+
+    <main class="in-main">
+        <% if (userDetails.length > 0 ) { %>
+    
+            <p>User Information</p>
+
+            <div class="in-main_table">
+                <table cellpadding="6px">
+                    <thead>
+                        <tr>
+                            <td class="main_th1">ID</td>
+                            <td class="main_th2">USERNAMES</td> 
+                        </tr>                            
+                        <tbody>
+                            <% for(let data of userDetails) { %>
+                            <tr> 
+                            <td class="main_td1"> <%= data.id %> </td>
+                            <td class="main_td2"> <%= data.user %> </td>
+                            </tr>
+                            <% } %>
+                        </tbody>
+                    </thead>
+                </table>    
+            </div>
+        
+        <% } else { %>   
+
+            <h1 style="text-align: center;">No Users Found</h1>
+
+        <% } %>  
+    </main>   
+       
+</body>
+</html>    
